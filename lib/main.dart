@@ -1,9 +1,5 @@
 
-import 'package:first_app_batch_3/12_20_2024/stack_practice.dart';
-import 'package:first_app_batch_3/12_20_2024/textfield_and_button_practice.dart';
-import 'package:first_app_batch_3/screens/column_practice.dart';
-import 'package:first_app_batch_3/screens/home_screen.dart';
-import 'package:first_app_batch_3/screens/network_asset_image.dart';
+import 'package:first_app_batch_3/12_23_2024/login_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: TextFieldAndButtonPractice(),
+      home: LoginScreen(),
     );
   }
 }
