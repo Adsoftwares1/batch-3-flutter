@@ -3,6 +3,8 @@ import 'package:first_app_batch_3/12_23_2024/login_ui.dart';
 import 'package:first_app_batch_3/12_24_24/digital_watch.dart';
 import 'package:first_app_batch_3/12_25_2024/stateless.dart';
 import 'package:first_app_batch_3/12_25_2024/statfulPractice.dart';
+import 'package:first_app_batch_3/12_30_2024/buttons_practice.dart';
+import 'package:first_app_batch_3/12_30_2024/google_fonts.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: StatefullPractice(),
+      home: GoogleFontsPractice(),
     );
   }
 }
