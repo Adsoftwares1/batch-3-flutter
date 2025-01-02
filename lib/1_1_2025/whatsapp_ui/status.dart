@@ -1,4 +1,5 @@
 
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 class StatusScreen extends StatefulWidget {
@@ -13,9 +14,7 @@ class _StatusScreenState extends State<StatusScreen> {
     {"Profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEcUtOBjHYYxNETFX8OgTY28kxJ_dzUwmiQ&s", "Name": "Alice Smith", "Time": "10:00 AM"},
     {"Profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEcUtOBjHYYxNETFX8OgTY28kxJ_dzUwmiQ&s", "Name": "Alice Smith", "Time": "10:00 AM"},
     {"Profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEcUtOBjHYYxNETFX8OgTY28kxJ_dzUwmiQ&s", "Name": "Alice Smith", "Time": "10:00 AM"},
-    {"Profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEcUtOBjHYYxNETFX8OgTY28kxJ_dzUwmiQ&s", "Name": "Alice Smith", "Time": "10:00 AM"},
-    {"Profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEcUtOBjHYYxNETFX8OgTY28kxJ_dzUwmiQ&s", "Name": "Alice Smith", "Time": "10:00 AM"},
-  ];
+   ];
 
   List<Map<String, dynamic>> StatusSeen = [
     {"Profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEcUtOBjHYYxNETFX8OgTY28kxJ_dzUwmiQ&s", "Name": "Alice Smith", "Time": "10:00 AM"},
@@ -75,13 +74,21 @@ class _StatusScreenState extends State<StatusScreen> {
           ),
           SizedBox(height: 10),
           // status not seen yet
-          Expanded(
+          Flexible(
+            flex: 2,
             child: ListView.builder(
               itemCount: StatusNotSeenYet.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(StatusNotSeenYet[index]["Profile"]),
+                  leading: DottedBorder(
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(50),
+                    strokeWidth: 2,
+                    dashPattern: [10, 10],
+                    color: Colors.green,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(StatusNotSeenYet[index]["Profile"]),
+                    ),
                   ),
                   subtitle: Text(StatusNotSeenYet[index]["Name"], style: TextStyle(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold  ),),
                   trailing: Text(StatusNotSeenYet[index]["Time"]),
@@ -96,6 +103,29 @@ class _StatusScreenState extends State<StatusScreen> {
             thickness: 1,
           ),
           SizedBox(height: 10),
+
+          Flexible(
+            flex: 2,
+            child: ListView.builder(
+              itemCount: StatusSeen.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: DottedBorder(
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(50),
+                    strokeWidth: 2,
+                    dashPattern: [10, 10],
+                    color: Colors.grey,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(StatusSeen[index]["Profile"]),
+                    ),
+                  ),
+                  subtitle: Text(StatusSeen[index]["Name"], style: TextStyle(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold  ),),
+                  trailing: Text(StatusSeen[index]["Time"]),
+                );
+              },
+            ),
+          ),
           
         ],
       ),
