@@ -5,6 +5,7 @@ import 'package:first_app_batch_3/12_25_2024/stateless.dart';
 import 'package:first_app_batch_3/12_25_2024/statfulPractice.dart';
 import 'package:first_app_batch_3/12_30_2024/buttons_practice.dart';
 import 'package:first_app_batch_3/12_30_2024/google_fonts.dart';
+import 'package:first_app_batch_3/1_13_2025/drawer_practice.dart';
 import 'package:first_app_batch_3/1_1_2025/expanded_wiget.dart';
 import 'package:first_app_batch_3/1_1_2025/flexable_widget_Practice.dart';
 import 'package:first_app_batch_3/1_1_2025/whatsapp_ui/Home_screen.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: WhatsappHomeScreen(),
+      home: DrawerPractice(),
     );
   }
 }
