@@ -10,6 +10,7 @@ import 'package:first_app_batch_3/1_14_2025/NetworkCachedIamge_Practice.dart';
 import 'package:first_app_batch_3/1_14_2025/custom_splash_screen.dart';
 import 'package:first_app_batch_3/1_14_2025/practice_margin_rand_number.dart';
 import 'package:first_app_batch_3/1_15_2025/get_api_practice_without_model.dart';
+import 'package:first_app_batch_3/1_16_2025/get_api_practice_with_model.dart';
 import 'package:first_app_batch_3/1_1_2025/expanded_wiget.dart';
 import 'package:first_app_batch_3/1_1_2025/flexable_widget_Practice.dart';
 import 'package:first_app_batch_3/1_1_2025/whatsapp_ui/Home_screen.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: GetApiPractice(),
+      home: GetApiPracticeWithModel(),
     );
   }
 }
