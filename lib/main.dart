@@ -14,6 +14,9 @@ import 'package:first_app_batch_3/1_16_2025/get_api_practice_with_model.dart';
 import 'package:first_app_batch_3/1_1_2025/expanded_wiget.dart';
 import 'package:first_app_batch_3/1_1_2025/flexable_widget_Practice.dart';
 import 'package:first_app_batch_3/1_1_2025/whatsapp_ui/Home_screen.dart';
+import 'package:first_app_batch_3/1_20_2025/login_screen.dart';
+import 'package:first_app_batch_3/1_20_2025/post_api.dart';
+import 'package:first_app_batch_3/1_20_2025/update_my_info.dart';
 import 'package:first_app_batch_3/revission/newtork_image.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: GetApiPracticeWithModel(),
+      home: UpdateMyInfo(),
     );
   }
 }
