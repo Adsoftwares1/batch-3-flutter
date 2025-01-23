@@ -17,10 +17,19 @@ import 'package:first_app_batch_3/1_1_2025/whatsapp_ui/Home_screen.dart';
 import 'package:first_app_batch_3/1_20_2025/login_screen.dart';
 import 'package:first_app_batch_3/1_20_2025/post_api.dart';
 import 'package:first_app_batch_3/1_20_2025/update_my_info.dart';
+import 'package:first_app_batch_3/1_23_2024/home_screen_shared.dart';
+import 'package:first_app_batch_3/1_23_2024/login_scree_shared.dart';
 import 'package:first_app_batch_3/revission/newtork_image.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+late SharedPreferences sharedPreferencesObject;
+bool isLogin = false;
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+   sharedPreferencesObject = await SharedPreferences.getInstance();
+   isLogin = sharedPreferencesObject.getBool("isLogin") ?? false;
+
   runApp(const MyApp());
 }
 
@@ -37,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: UpdateMyInfo(),
+      home: isLogin ? HomeScreenSharedPrefrences() : LoginScreenSharedPrefrences(),
     );
   }
 }
