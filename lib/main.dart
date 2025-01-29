@@ -1,25 +1,9 @@
 
-import 'package:first_app_batch_3/12_23_2024/login_ui.dart';
-import 'package:first_app_batch_3/12_24_24/digital_watch.dart';
-import 'package:first_app_batch_3/12_25_2024/stateless.dart';
-import 'package:first_app_batch_3/12_25_2024/statfulPractice.dart';
-import 'package:first_app_batch_3/12_30_2024/buttons_practice.dart';
-import 'package:first_app_batch_3/12_30_2024/google_fonts.dart';
-import 'package:first_app_batch_3/1_13_2025/drawer_practice.dart';
-import 'package:first_app_batch_3/1_14_2025/NetworkCachedIamge_Practice.dart';
-import 'package:first_app_batch_3/1_14_2025/custom_splash_screen.dart';
-import 'package:first_app_batch_3/1_14_2025/practice_margin_rand_number.dart';
-import 'package:first_app_batch_3/1_15_2025/get_api_practice_without_model.dart';
-import 'package:first_app_batch_3/1_16_2025/get_api_practice_with_model.dart';
-import 'package:first_app_batch_3/1_1_2025/expanded_wiget.dart';
-import 'package:first_app_batch_3/1_1_2025/flexable_widget_Practice.dart';
-import 'package:first_app_batch_3/1_1_2025/whatsapp_ui/Home_screen.dart';
-import 'package:first_app_batch_3/1_20_2025/login_screen.dart';
-import 'package:first_app_batch_3/1_20_2025/post_api.dart';
-import 'package:first_app_batch_3/1_20_2025/update_my_info.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:first_app_batch_3/1_23_2024/home_screen_shared.dart';
 import 'package:first_app_batch_3/1_23_2024/login_scree_shared.dart';
-import 'package:first_app_batch_3/revission/newtork_image.dart';
+import 'package:first_app_batch_3/1_29_2025_firebase_email_athentication/login_with_email_and_password.dart';
+import 'package:first_app_batch_3/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 late SharedPreferences sharedPreferencesObject;
@@ -27,6 +11,9 @@ bool isLogin = false;
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
    sharedPreferencesObject = await SharedPreferences.getInstance();
    isLogin = sharedPreferencesObject.getBool("isLogin") ?? false;
 
@@ -46,10 +33,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: isLogin ? HomeScreenSharedPrefrences() : LoginScreenSharedPrefrences(),
+      home: LoginWithEmailAndPassword(),
     );
   }
 }
+
 
 
 
