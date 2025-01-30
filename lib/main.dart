@@ -6,6 +6,7 @@ import 'package:first_app_batch_3/1_29_2025_firebase_email_athentication/login_w
 import 'package:first_app_batch_3/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:first_app_batch_3/1_30_2025_firestore_database/insert_data_screen.dart';
 late SharedPreferences sharedPreferencesObject;
 bool isLogin = false;
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginWithEmailAndPassword(),
+      home: InsertDataScreen(),
     );
   }
 }
