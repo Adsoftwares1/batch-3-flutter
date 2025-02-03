@@ -1,6 +1,5 @@
-
-
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:first_app_batch_3/1_30_2025_firestore_database/update_data_screen.dart';
 import 'package:flutter/material.dart';
 
 class GetDataScreen extends StatelessWidget {
@@ -34,6 +33,46 @@ class GetDataScreen extends StatelessWidget {
                     Text('Father Name: ${student['fatherName']}'),
                     Text('Contact: ${student['contact']}'),
                     Text('Address: ${student['address']}'),
+                    Text('Document ID: ${student.id}'),
+                  ],
+                ),
+                trailing: Column(
+                  children: [
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UpdateDataScreen(
+                                stdNamePassed: student["studentName"],
+                                stdFatherNamePassed: student['fatherName'],
+                                stdContactPassed: student['contact'],
+                                stdAddressPassed: student['address'],
+                                stdIdPassed: student.id,
+                              ),
+                            ),
+                          );
+                        },
+                        child: Icon(
+                          Icons.edit,
+                          size: 20,
+                          color: Colors.green,
+                        )),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () async {
+                        FirebaseFirestore obj =  FirebaseFirestore.instance;
+                        await obj.collection("students").doc(student.id).delete();
+                      },
+
+                      child: Icon(
+                        Icons.delete,
+                        size: 20,
+                        color: Colors.red,
+                      ),
+                    ),
                   ],
                 ),
               );

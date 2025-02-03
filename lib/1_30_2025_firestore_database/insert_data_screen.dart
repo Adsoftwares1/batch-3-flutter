@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:first_app_batch_3/1_30_2025_firestore_database/get_data_screen.dart';
+import 'package:first_app_batch_3/1_30_2025_firestore_database/update_data_screen.dart';
 import 'package:flutter/material.dart';
 
 class InsertDataScreen extends StatefulWidget {
@@ -139,8 +140,17 @@ class _InsertDataScreenState extends State<InsertDataScreen> {
                 },
                 child: Text('Get Data'),
               ),
+
+              //update data
+              ElevatedButton(
+                onPressed: () {
+                  
+                },
+                child: Text('Update Data'),
+              ),
             ],
           ),
+
 
         ),
       ),
